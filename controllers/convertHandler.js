@@ -8,8 +8,12 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
 
+    if(/\d*\.+\d*\.+/.test(input)||/\/\d*\.*\d*\//.test(input)){
+    
+    return 'invalid number';}
+
 numString = input.match(/\d*\.?\d+/g);
-   
+
 if (numString == null){
     console.log("number is 1")
 return 1;
@@ -31,12 +35,17 @@ numString[1]==undefined? denominator = 1
   for (let i = 0; i < arr.length; i++) {
   result += arr[i];
   }
-  if(result=='l'||result=='L'){
+  if(/^mi$|^km$|^gal$|^L$|^lbs$|^kg$/i.test(result)){
+    if(result=='l'||result=='L'){
     console.log("unit is "+result);
     return 'L';
   }
+  else{
   console.log("unit is "+result)
  return result.toLowerCase();
+}
+  }
+  else return 'invalid unit';
 };
   
   this.getReturnUnit = function(initUnit) {

@@ -10,5 +10,6 @@ suite('Unit Tests', function(){
         assert.isNumber(convertHandler.getNum("12.5"), 'input is a decimal number');
         assert.isNumber(convertHandler.getNum("4/5"), 'input is a fractional number');
         assert.isNumber(convertHandler.getNum("4.5/5.5"), 'input is a fractional number with decimal');
+        assert.isNotNumber(convertHandler.getNum("2/5/9"), 'input is a double fraction');
       });
 });
