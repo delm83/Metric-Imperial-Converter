@@ -6,10 +6,14 @@ let convertHandler = new ConvertHandler();
 
 suite('Unit Tests', function(){
     test('#isNumber, #isNotNumber', function () {
-        assert.isNumber(convertHandler.getNum("12"), 'input is a whole number');
-        assert.isNumber(convertHandler.getNum("12.5"), 'input is a decimal number');
-        assert.isNumber(convertHandler.getNum("4/5"), 'input is a fractional number');
-        assert.isNumber(convertHandler.getNum("4.5/5.5"), 'input is a fractional number with decimal');
-        assert.isNotNumber(convertHandler.getNum("2/5/9"), 'input is a double fraction');
+        assert.isNumber(convertHandler.getNum("12kg"), 'input is a whole number');
+        assert.isNumber(convertHandler.getNum("12.5kg"), 'input is a decimal number');
+        assert.isNumber(convertHandler.getNum("4/5kg"), 'input is a fractional number');
+        assert.isNumber(convertHandler.getNum("4.5/5.5kg"), 'input is a fractional number with decimal');
+        assert.isNotNumber(convertHandler.getNum("2/5/9kg"), 'input is a double fraction');
+        });
+
+      test('#equal, #notEqual', function () {
+        assert.equal(1, convertHandler.getNum("kg"), 'no numerical input provided');
       });
 });
