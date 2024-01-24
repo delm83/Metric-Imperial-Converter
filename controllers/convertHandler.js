@@ -116,7 +116,7 @@ return result
   result = initNum/lbsToKg;
   break;
   }
-  return result;
+  return result.toFixed(5);
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
