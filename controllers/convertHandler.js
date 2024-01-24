@@ -121,7 +121,9 @@ return result
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     let result;
- result = initNum+" "+this.spellOutUnit(initUnit)+" converts to "+returnNum+" "+this.spellOutUnit(returnUnit);
+    let initUnitString = this.spellOutUnit(initUnit);
+    let returnUnitString = this.spellOutUnit(returnUnit);
+ result = initNum+" "+initUnitString+" converts to "+returnNum+" "+returnUnitString;
   return result;
   };
   }
