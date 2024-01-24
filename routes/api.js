@@ -14,15 +14,15 @@ module.exports = function (app) {
     let initUnit = convertHandler.getUnit(input);
 
     if(initNum=='invalid number' && initUnit == 'invalid unit'){
-      return res.json({string: "invalid number and unit"})
+      return res.type('txt').send('invalid number and unit');
     }
 
     if(initNum == 'invalid number' ){
-      return res.json({string: "invalid number"})
+      return res.type('txt').send('invalid number');
     }
 
     if(initUnit == 'invalid unit'){
-      return res.json({string: "invalid unit"})
+      return res.type('txt').send('invalid unit');
     }
     let returnNum = convertHandler.convert(initNum, initUnit);
     let returnUnit = convertHandler.getReturnUnit(initUnit);

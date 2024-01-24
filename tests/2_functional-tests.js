@@ -15,6 +15,7 @@ suite('Functional Tests', function() {
               .get('/api/convert?input=10L')
               .end(function (err, res) {
                 assert.equal(res.status, 200);
+                assert.equal('10 litres converts to 2.6417217685798895 gallons', res.body.string);
                 done();
               });
           });
@@ -25,6 +26,7 @@ suite('Functional Tests', function() {
               .get('/api/convert?input=32g')
               .end(function (err, res) {
                 assert.equal(res.status, 200);
+                assert.equal('invalid unit', res.text);
                 done();
               });
           });
@@ -35,6 +37,7 @@ suite('Functional Tests', function() {
               .get('/api/convert?input=3/7.2/4kg')
               .end(function (err, res) {
                 assert.equal(res.status, 200);
+                assert.equal('invalid number', res.text);
                 done();
               });
           });
@@ -45,6 +48,7 @@ suite('Functional Tests', function() {
               .get('/api/convert?input=3/7.2/4kilomegagram')
               .end(function (err, res) {
                 assert.equal(res.status, 200);
+                assert.equal('invalid number and unit', res.text);
                 done();
               });
           });
@@ -55,6 +59,7 @@ suite('Functional Tests', function() {
               .get('/api/convert?input=kg')
               .end(function (err, res) {
                 assert.equal(res.status, 200);
+                assert.equal('1 kilograms converts to 2.2046244201837775 pounds', res.body.string);
                 done();
               });
           });
