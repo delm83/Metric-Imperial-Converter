@@ -29,7 +29,7 @@ suite('Unit Tests', function(){
         assert.equal("kg", convertHandler.getReturnUnit("lbs"), "return unit for lbs is kg");
         assert.equal("lbs", convertHandler.getReturnUnit("kg"), "return unit for kg is lbs");
         assert.equal("miles", convertHandler.spellOutUnit("mi"), "mi is short for miles");
-        assert.equal("kilometres", convertHandler.spellOutUnit("km"), "km is short for kilometres");
+        assert.equal("kilometers", convertHandler.spellOutUnit("km"), "km is short for kilometers");
         assert.equal("gallons", convertHandler.spellOutUnit("gal"), "gal is short for gallons");
         assert.equal("litres", convertHandler.spellOutUnit("L"), "L is short for litres");
         assert.equal("pounds", convertHandler.spellOutUnit("lbs"), "lbs is short for pounds");

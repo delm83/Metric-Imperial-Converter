@@ -73,7 +73,7 @@ return result
   result = 'miles';
   break;
   case "km":
-  result = 'kilometres';
+  result = 'kilometers';
   break;
   case "gal":
   result = 'gallons';
@@ -116,7 +116,7 @@ return result
   result = initNum/lbsToKg;
   break;
   }
-  return result.toFixed(5);
+  return Number(result.toFixed(5));
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
