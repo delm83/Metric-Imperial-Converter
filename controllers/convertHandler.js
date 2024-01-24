@@ -15,19 +15,14 @@ function ConvertHandler() {
 numString = input.match(/\d*\.?\d+/g);
 
 if (numString == null){
-    console.log("number is 1")
 return 1;
   }
  numerator = numString[0];
 numString[1]==undefined? denominator = 1
 : denominator = numString[1];
  let result = numerator/denominator;
- console.log ("numerator is "+ numerator)
- console.log ("denominator is "+ denominator)
- console.log("total is "+result)
- return result
-
-  };
+return result
+};
   
   this.getUnit = function(input) {
   let result = ''
@@ -37,14 +32,12 @@ numString[1]==undefined? denominator = 1
   }
   if(/^mi$|^km$|^gal$|^L$|^lbs$|^kg$/i.test(result)){
     if(result=='l'||result=='L'){
-    console.log("unit is "+result);
-    return 'L';
-  }
-  else{
-  console.log("unit is "+result)
- return result.toLowerCase();
+      return 'L';
+        }
+        else{
+       return result.toLowerCase();
+      }
 }
-  }
   else return 'invalid unit';
 };
   
@@ -129,7 +122,6 @@ numString[1]==undefined? denominator = 1
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     let result;
  result = initNum+" "+this.spellOutUnit(initUnit)+" converts to "+returnNum+" "+this.spellOutUnit(returnUnit);
-  
   return result;
   };
   }
