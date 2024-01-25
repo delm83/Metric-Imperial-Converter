@@ -24,62 +24,50 @@ test('#isFractionalNumberWithDecimal', function () {
   test('#noNumericalInput', function () {
     assert.equal(1, convertHandler.getNum("mi"), 'no numerical input provided');
   });
-  test('#unitIsMI', function () {
+  test('#readCorrectInputUnit', function () {
     assert.equal("mi", convertHandler.getUnit("50mi"), "unit is mi");
-  });
-    test('#unitIsKM', function () {
     assert.equal("km", convertHandler.getUnit("50km"), "unit is km");
-  });
-    test('#unitIsGal', function () {
     assert.equal("gal", convertHandler.getUnit("50gal"), "unit is gal");
-  });
-    test('#unitIsL', function () {
     assert.equal("L", convertHandler.getUnit("50L"), "unit is L");
-  });
-    test('#unitIsLbs', function () {
     assert.equal("lbs", convertHandler.getUnit("50lbs"), "unit is lbs");
-  });
-    test('#unitIsKg', function () {
     assert.equal("kg", convertHandler.getUnit("50kg"), "unit is kg");
   });
     test('#unitIsInvalid', function () {
     assert.equal("invalid unit", convertHandler.getUnit("50mps"), "unit is invalid");
   });
-    test('#miConvertsToKM', function () {
+    test('#returnCorrectReturnUnit', function () {
     assert.equal("km", convertHandler.getReturnUnit("mi"), "return unit for mi is km");
-  });
-    test('#kmConvertsToMI', function () {
     assert.equal("mi", convertHandler.getReturnUnit("km"), "return unit for km is mi");
-  });
-    test('#galConvertsToL', function () {
     assert.equal("L", convertHandler.getReturnUnit("gal"), "return unit for gal is L");
-  });
-    test('#lConvertsToGal', function () {
     assert.equal("gal", convertHandler.getReturnUnit("L"), "return unit for L is gal");
-  });
-    test('#lbsConvertsToKg', function () {
     assert.equal("kg", convertHandler.getReturnUnit("lbs"), "return unit for lbs is kg");
-  });
-    test('#kgConvertsToLbs', function () {
     assert.equal("lbs", convertHandler.getReturnUnit("kg"), "return unit for kg is lbs");
   });
-    test('#miEqualsMiles', function () {
+    test('#returnCorrectSpelledOutString', function () {
     assert.equal("miles", convertHandler.spellOutUnit("mi"), "mi is short for miles");
-  });
-    test('#kmEqualsKilometers', function () {
     assert.equal("kilometers", convertHandler.spellOutUnit("km"), "km is short for kilometers");
-  });
-    test('#galEqualsGallons', function () {
     assert.equal("gallons", convertHandler.spellOutUnit("gal"), "gal is short for gallons");
-  });
-    test('#LEqualsLitres', function () {
     assert.equal("litres", convertHandler.spellOutUnit("L"), "L is short for litres");
-  });
-    test('#lbsEqualsPounds', function () {
     assert.equal("pounds", convertHandler.spellOutUnit("lbs"), "lbs is short for pounds");
-  });
-    test('#kgEqualsKilograms', function () {
     assert.equal("kilograms", convertHandler.spellOutUnit("kg"), "kg is short for kilograms");
+  })
+  test('#convertGallonsToLitres', function () {
+    assert.equal(15.14164, convertHandler.convert(4, "gal"));
+  });
+  test('#convertLitresToGallons', function () {
+    assert.equal(6.07596, convertHandler.convert(23, "L"));
+  });
+  test('#convertMilesToKilometers', function () {
+    assert.equal(19.31208, convertHandler.convert(12, "mi"));
+  });
+  test('#convertKilometersToMiles', function () {
+    assert.equal(27.96177, convertHandler.convert(45, "km"));
+  });
+  test('#convertLbsToKgs', function () {
+    assert.equal(15.87572, convertHandler.convert(35, "lbs"));
+  });
+  test('#convertKgsToLbs', function () {
+    assert.equal(147.70984, convertHandler.convert(67, "kg"));
   });
 });
 
